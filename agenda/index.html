@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agenda • Service IT</title>
+  <style>
+    :root{
+      --turquesa:#16b6b3;   /* cor base da sua logo */
+      --turquesa-esc:#0fa3a1;
+      --amarelo:#f2b705;    /* triângulo da logo */
+      --texto:#0b2b2b;
+      --card-bg:rgba(255,255,255,.68);
+      --shadow:0 20px 50px rgba(0,0,0,.15);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--texto);
+      display:grid;
+      place-items:center;
+      background:
+        radial-gradient(1200px 600px at 15% 20%, rgba(22,182,179,.18), transparent 60%),
+        radial-gradient(900px 500px at 85% 10%, rgba(242,183,5,.18), transparent 55%),
+        radial-gradient(700px 500px at 85% 85%, rgba(22,182,179,.15), transparent 55%),
+        linear-gradient(180deg, #f7fbfb 0%, #eef7f7 100%);
+      overflow:hidden;
+    }
+
+    /* blobs decorativos */
+    .blob{
+      position:fixed; inset:auto;
+      filter:blur(30px); opacity:.25; z-index:0;
+      border-radius:50%;
+      animation:float 18s ease-in-out infinite;
+    }
+    .b1{width:380px;height:380px;background:var(--turquesa);left:-120px;top:-120px;}
+    .b2{width:320px;height:320px;background:var(--amarelo);right:-90px;top:60px;animation-delay:4s}
+    .b3{width:360px;height:360px;background:var(--turquesa-esc);left:60px;bottom:-120px;animation-delay:8s}
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-18px)}
+    }
+
+    .card{
+      position:relative;
+      z-index:1;
+      width:min(92vw, 560px);
+      background:var(--card-bg);
+      backdrop-filter:saturate(160%) blur(10px);
+      -webkit-backdrop-filter:saturate(160%) blur(10px);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      padding:28px 28px 24px;
+      text-align:center;
+      border:1px solid rgba(15,163,161,.12);
+    }
+
+    .brand{
+      display:grid; place-items:center; gap:14px; margin-bottom:14px;
+    }
+    .brand img{
+      width:min(56%, 240px);
+      height:auto;
+      display:block;
+    }
+    .title{
+      margin:0;
+      font-weight:700;
+      letter-spacing:.2px;
+      font-size:clamp(20px, 2.2vw + 12px, 28px);
+      color:var(--turquesa-esc);
+    }
+    .subtitle{
+      margin:6px 0 20px;
+      color:#2d4444;
+      font-size:clamp(14px, 1.2vw + 10px, 16px);
+    }
+
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-top:8px;
+      padding:14px 20px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:16px;
+      background:linear-gradient(135deg, var(--turquesa) 0%, var(--turquesa-esc) 100%);
+      color:#fff;
+      box-shadow:0 10px 24px rgba(22,182,179,.35);
+      transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+    }
+    .cta:hover{ transform:translateY(-2px); box-shadow:0 16px 32px rgba(22,182,179,.38) }
+    .cta:active{ transform:translateY(0); opacity:.95 }
+
+    /* ícone whatsapp (svg inline) */
+    .cta svg{width:20px;height:20px;flex:0 0 20px}
+
+    footer{
+      z-index:1;
+      position:fixed;
+      bottom:14px; left:0; right:0;
+      text-align:center;
+      font-size:12px; color:#496565; opacity:.9;
+    }
+  </style>
+</head>
+<body>
+  <!-- blobs decorativos -->
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
+  <main class="card">
+    <div class="brand">
+      <!-- use exatamente o nome do arquivo da sua logo -->
+      <img src="Agenda - Service IT black.png" alt="Service IT - Logo">
+    </div>
+    <h1 class="title">Fale com a Agenda Service IT</h1>
+    <p class="subtitle">Tecnologia da Informação • Segurança Eletrônica • Automação Residencial e IA</p>
+
+    <!-- Substitua SEUNUMERO pelo seu número completo com DDI -->
+    <a class="cta" href="https://wa.me/5582987426123" target="_blank" rel="noopener">
+      <!-- ícone whatsapp -->
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.11 1.6 5.9L0 24l6.27-1.64A12 12 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.23-3.48-8.52ZM12 21.82a9.8 9.8 0 0 1-4.99-1.34l-.36-.21-3.72.97.99-3.62-.24-.37A9.8 9.8 0 0 1 2.18 12C2.18 6.57 6.57 2.18 12 2.18S21.82 6.57 21.82 12 17.43 21.82 12 21.82Zm5.58-7.31c-.31-.16-1.85-.92-2.13-1.02-.29-.11-.5-.16-.72.16-.22.31-.83 1.02-1.02 1.23-.19.22-.38.24-.69.08-.31-.16-1.32-.49-2.51-1.56a9.4 9.4 0 0 1-1.73-2.12c-.18-.31 0-.48.14-.64.14-.14.31-.38.47-.58.16-.2.21-.35.31-.58.1-.22.06-.42-.02-.58-.08-.16-.72-1.73-.99-2.37-.26-.63-.53-.55-.72-.55-.19 0-.42-.02-.64-.02s-.58.08-.88.42c-.31.34-1.16 1.13-1.16 2.77s1.19 3.22 1.36 3.45c.16.22 2.35 3.6 5.7 5.05.8.34 1.42.54 1.9.69.8.25 1.53.22 2.11.13.64-.09 1.85-.76 2.11-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.36Z"/>
+      </svg>
+      Chamar no WhatsApp
+    </a>
+  </main>
+
+  <footer>© Agenda Service IT</footer>
+</body>
+</html>
